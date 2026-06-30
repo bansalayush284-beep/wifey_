@@ -3,320 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine Proposal</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<title>Happy Birthday Mrs. Sandhya Bansal ❤️</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-height:100vh;
 overflow:hidden;
-background:linear-gradient(135deg,#ffd6e7,#ff8fab);
-display:flex;
-justify-content:center;
-align-items:center;
+background:linear-gradient(135deg,#ff4d88,#ff99cc,#ffe6f2);
+height:100vh;
+color:white;
 text-align:center;
-color:white;
 }
 
-/* Container */
-.container{
-position:relative;
-z-index:2;
-padding:20px;
-}
-
-/* Bear animation */
-.bear{
-font-size:60px;
-animation:bounce 1.5s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-}
-
-/* Heading */
-h1{
-font-family:'Dancing Script',cursive;
-font-size:40px;
-margin:15px 0;
-}
-
-.subtitle{
-font-style:italic;
-margin-bottom:20px;
-}
-
-.closing{
-margin-top:20px;
-font-size:14px;
-opacity:0.9;
-}
-
-/* Buttons */
-.buttons{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-#yesBtn{
-background:linear-gradient(45deg,#ff1744,#ff5252);
-border:none;
-color:white;
-padding:15px 40px;
-font-size:18px;
-border-radius:50px;
-cursor:pointer;
-box-shadow:0 0 15px rgba(255,0,0,0.6);
-transition:0.3s;
-}
-
-#yesBtn:hover{
-box-shadow:0 0 25px rgba(255,0,0,1);
-transform:scale(1.1);
-}
-
-#noBtn{
-background:white;
-color:red;
-border:2px solid red;
-padding:10px 25px;
-font-size:16px;
-border-radius:50px;
-cursor:pointer;
-position:relative;
-}
-
-/* Floating hearts */
-.heart{
-position:fixed;
-bottom:-50px;
-animation:floatUp linear infinite;
-opacity:0.7;
-}
-
-@keyframes floatUp{
-0%{
-transform:translateY(0);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-80%{
-opacity:1;
-}
-100%{
-transform:translateY(-110vh);
-opacity:0;
-}
-}
-
-/* Celebration */
-#celebration{
+canvas{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ff4d6d,#ff8fab);
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:5;
+pointer-events:none;
 }
 
-.yay{
-font-size:60px;
-animation:pulse 1s infinite;
+.container{
+position:relative;
+z-index:2;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
+}
+
+h1{
+font-size:3rem;
+text-shadow:0 0 15px white;
+animation:pulse 2s infinite;
+}
+
+h2{
+margin-top:10px;
+font-size:1.6rem;
+}
+
+#gift{
+margin-top:40px;
+width:150px;
+height:150px;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+#message{
+display:none;
+max-width:700px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(8px);
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#typing{
+font-size:18px;
+line-height:1.8;
+min-height:200px;
+}
+
+button{
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff2d75;
+font-weight:bold;
+}
+
+#slideshow{
+margin-top:20px;
+width:220px;
+height:280px;
+border-radius:20px;
+border:4px solid white;
+object-fit:cover;
+display:none;
+box-shadow:0 0 20px white;
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:24px;
+animation:float 7s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-120px);opacity:0;}
+}
+
+@keyframes bounce{
+50%{transform:translateY(-15px);}
 }
 
 @keyframes pulse{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.2);}
-}
-
-.spin{
-font-size:50px;
-animation:spin 2s linear infinite;
-}
-
-@keyframes spin{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
-}
-
-/* Confetti */
-.confetti{
-position:fixed;
-width:10px;
-height:10px;
-background:red;
-top:-10px;
-animation:confettiFall linear forwards;
-}
-
-@keyframes confettiFall{
-to{
-transform:translateY(110vh) rotate(720deg);
-}
-}
-
-@media(max-width:600px){
-h1{font-size:28px;}
+50%{transform:scale(1.05);}
 }
 </style>
 </head>
+
 <body>
 
-<div class="container" id="mainContent">
+<canvas id="fireworks"></canvas>
 
-<div class="bear">🐻</div>
+<div class="container">
 
-<h1>Will You Be My Valentine, Ms Vindhya?</h1>
+<h1>🎂 Happy Birthday 🎂</h1>
 
-<div class="subtitle">
-Will you be my forever wali valentine babe 💘🥺🫶
+<h2>❤️ Mrs. Sandhya Bansal ❤️</h2>
+
+<p style="margin-top:15px;font-size:18px;">
+Click the Gift to Open Your Surprise 🎁
+</p>
+
+<img
+id="gift"
+src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
+onclick="openGift()">
+
+<div id="message">
+
+<img
+id="slideshow"
+src="photo1.jpg">
+
+<div id="typing"></div>
+
+<button onclick="proposal()">
+💖 Click One Last Time 💖
+</button>
+
 </div>
 
-<div class="buttons">
-<button id="yesBtn">Yes ❤️</button>
-<button id="noBtn">No</button>
 </div>
 
-<div class="closing">
-Every love story is beautiful, but ours is my favourite
-</div>
-
-</div>
-
-<!-- Celebration Screen -->
-<div id="celebration">
-<div class="yay">Yayyyy!!</div>
-<div class="spin">💖</div>
-<div style="margin-top:20px;font-size:20px;">
-Love you 💕💘
-</div>
-</div>
+<audio id="music" controls style="display:none;">
+<source src="love.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 
-/* Floating hearts */
-let hearts=[];
-function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💖";
+const text=`My Dearest Sandhya ❤️
 
-const size=Math.random()*30+10;
-heart.style.fontSize=size+"px";
-heart.style.left=Math.random()*100+"vw";
+Happy Birthday to the most beautiful girl in my life.
 
-const duration=Math.random()*5+5;
-heart.style.animationDuration=duration+"s";
+You are my biggest blessing.
 
-document.body.appendChild(heart);
+Every smile of yours makes my day brighter.
 
-setTimeout(()=>heart.remove(),duration*1000);
+Thank you for loving me.
+
+I promise to stand beside you in every situation.
+
+May God always keep you happy,
+healthy and successful.
+
+You are my today,
+my tomorrow,
+and my forever.
+
+I Love You Endless...
+
+Forever Yours,
+Ayush ❤️`;
+
+let index=0;
+
+function openGift(){
+
+document.getElementById("gift").style.display="none";
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("slideshow").style.display="block";
+
+document.getElementById("music").play();
+
+typeWriter();
+
+startSlide();
+
+fireworks();
+
 }
 
-let heartInterval=setInterval(()=>{
-if(hearts.length<15){
-createHeart();
+function typeWriter(){
+
+if(index<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(index);
+
+index++;
+
+setTimeout(typeWriter,40);
+
 }
-},500);
 
+}
 
-/* No button run away */
-const noBtn=document.getElementById("noBtn");
-const yesBtn=document.getElementById("yesBtn");
-
-const messages=[
-"Nope, not an option!",
-"Try again!",
-"You sure about that?",
-"Not happening!",
-"Think again!"
+const images=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg"
 ];
 
-let msgIndex=0;
+let img=0;
 
-function moveNoButton(){
+function startSlide(){
 
-const yesRect=yesBtn.getBoundingClientRect();
+setInterval(()=>{
 
-let x,y;
+img=(img+1)%images.length;
 
-do{
-x=Math.random()*(window.innerWidth-100);
-y=Math.random()*(window.innerHeight-50);
+document.getElementById("slideshow").src=images[img];
+
+},2500);
+
 }
-while(
-x>yesRect.left-100 &&
-x<yesRect.right &&
-y>yesRect.top-50 &&
-y<yesRect.bottom
+
+setInterval(()=>{
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+},250);
+
+function proposal(){
+
+alert(
+"❤️ Mrs. Sandhya Bansal ❤️\n\nWill You Stay With Me Forever?\n\nI Love You ❤️"
 );
 
-noBtn.style.position="fixed";
-noBtn.style.left=x+"px";
-noBtn.style.top=y+"px";
-
-noBtn.innerText=messages[msgIndex];
-msgIndex=(msgIndex+1)%messages.length;
 }
+  const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
 
-noBtn.addEventListener("click",moveNoButton);
-noBtn.addEventListener("mouseover",moveNoButton);
+function resizeCanvas(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
+function fireworks(){
 
-/* YES clicked celebration */
-yesBtn.addEventListener("click",()=>{
+setInterval(()=>{
 
-document.getElementById("mainContent").style.display="none";
+let x=Math.random()*canvas.width;
+let y=Math.random()*canvas.height*0.7;
 
-clearInterval(heartInterval);
+for(let i=0;i<35;i++){
 
-document.querySelectorAll(".heart").forEach(h=>h.remove());
+setTimeout(()=>{
 
-document.getElementById("celebration").style.display="flex";
+ctx.beginPath();
 
-/* Confetti */
-for(let i=0;i<120;i++){
+ctx.arc(
+x+(Math.random()-0.5)*120,
+y+(Math.random()-0.5)*120,
+Math.random()*4+2,
+0,
+Math.PI*2
+);
 
-const conf=document.createElement("div");
+ctx.fillStyle=`hsl(${Math.random()*360},100%,60%)`;
 
-conf.className="confetti";
+ctx.fill();
 
-conf.style.left=Math.random()*100+"vw";
-
-conf.style.background=
-"hsl("+Math.random()*360+",100%,50%)";
-
-conf.style.animationDuration=
-(Math.random()*3+2)+"s";
-
-document.body.appendChild(conf);
-
-setTimeout(()=>conf.remove(),5000);
+},i*15);
 
 }
 
-});
+setTimeout(()=>{
+ctx.clearRect(0,0,canvas.width,canvas.height);
+},900);
+
+},1800);
+
+}
 
 </script>
 
