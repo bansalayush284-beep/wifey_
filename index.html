@@ -6,6 +6,7 @@
 <title>Happy Birthday Mrs. Sandhya Bansal ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -37,7 +38,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
 padding:20px;
 }
 
@@ -62,17 +63,42 @@ animation:bounce 2s infinite;
 
 #message{
 display:none;
+width:100%;
 max-width:700px;
 background:rgba(255,255,255,.15);
 backdrop-filter:blur(8px);
 padding:20px;
 border-radius:20px;
 margin-top:20px;
+text-align:center;
+}
+
+.image-box{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:20px;
+}
+
+#slideshow{
+display:block;
+width:220px;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:4px solid white;
+box-shadow:0 0 20px white;
 }
 
 #typing{
+display:block;
+width:100%;
 font-size:18px;
 line-height:1.8;
+white-space:pre-line;
+text-align:center;
+margin-top:20px;
 min-height:200px;
 }
 
@@ -88,29 +114,12 @@ color:#ff2d75;
 font-weight:bold;
 }
 
-#slideshow{
-margin-top:20px;
-width:220px;
-height:280px;
-border-radius:20px;
-border:4px solid white;
-object-fit:cover;
-display:none;
-box-shadow:0 0 20px white;
-}
-
 .heart{
 position:absolute;
 color:red;
 font-size:24px;
 animation:float 7s linear infinite;
-} 
-.image-box{
-display:flex;
-justify-content:center;
-align-items:center;
-margin-bottom:20px;
-    }
+}
 
 @keyframes float{
 0%{transform:translateY(100vh);opacity:0;}
@@ -125,6 +134,7 @@ margin-bottom:20px;
 @keyframes pulse{
 50%{transform:scale(1.05);}
 }
+
 </style>
 </head>
 
@@ -147,8 +157,10 @@ id="gift"
 src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
 onclick="openGift()">
 
+<div id="message">
+
 <div class="image-box">
-    <img id="slideshow" src="photo1.jpg">
+<img id="slideshow" src="photo1.jpg">
 </div>
 
 <div id="typing"></div>
@@ -158,9 +170,6 @@ onclick="openGift()">
 </button>
 
 </div>
-
-</div>
-
 <audio id="music" controls style="display:none;">
     <source src="love.mp4" type="audio/mp4">
     Your browser does not support the audio element.
@@ -197,17 +206,14 @@ let index=0;
 function openGift(){
 
 document.getElementById("gift").style.display="none";
-
 document.getElementById("message").style.display="block";
-
 document.getElementById("slideshow").style.display="block";
 
-document.getElementById("music").play();
+const music=document.getElementById("music");
+music.play().catch(()=>{});
 
 typeWriter();
-
 startSlide();
-
 fireworks();
 
 }
@@ -251,11 +257,8 @@ setInterval(()=>{
 const h=document.createElement("div");
 
 h.className="heart";
-
 h.innerHTML="❤️";
-
 h.style.left=Math.random()*100+"vw";
-
 h.style.fontSize=(20+Math.random()*20)+"px";
 
 document.body.appendChild(h);
@@ -271,15 +274,20 @@ alert(
 );
 
 }
-  const canvas = document.getElementById("fireworks");
-const ctx = canvas.getContext("2d");
+
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
 
 function resizeCanvas(){
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
 }
+
 resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+
+window.addEventListener("resize",resizeCanvas);
 
 function fireworks(){
 
@@ -311,7 +319,9 @@ ctx.fill();
 }
 
 setTimeout(()=>{
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
+
 },900);
 
 },1800);
